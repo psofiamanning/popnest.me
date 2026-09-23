@@ -1,10 +1,10 @@
 import { useLanguage } from '../../context/LanguageContext'
 
 const TESTIMONIALS = [
-  { photo: '/images/testimonial-omar-haddad.png', top: 'top-[58%]', quoteKey: 'testimonials.quote1' },
+  { photo: '/images/testimonial-man-suit.png', top: 'top-[30%]', quoteKey: 'testimonials.quote4' },
   { photo: '/images/testimonial-woman-laptop.png', top: 'bottom-3', quoteKey: 'testimonials.quote2' },
   { photo: '/images/testimonial-woman-blazer.png', top: 'top-[60%]', quoteKey: 'testimonials.quote3' },
-  { photo: '/images/testimonial-man-suit.png', top: 'top-[30%]', quoteKey: 'testimonials.quote4' },
+  { photo: '/images/testimonial-omar-haddad.png', top: 'top-[58%]', quoteKey: 'testimonials.quote1' },
 ]
 
 export default function Testimonials() {
