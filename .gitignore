@@ -26,3 +26,4 @@ dist-ssr
 
 # raw photo drop folder (may contain GPS metadata)
 public/images/incoming/
+.vercel
