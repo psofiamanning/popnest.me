@@ -3,7 +3,7 @@ import { useLanguage } from '../../context/LanguageContext'
 const TESTIMONIALS = [
   {
     photo: '/images/testimonial-man-suit.png',
-    top: 'top-[30%]',
+    top: 'bottom-3',
     quoteKey: 'testimonials.quote4',
     objectPosition: 'object-top sm:object-center',
   },
