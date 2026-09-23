@@ -20,7 +20,7 @@ export default function PromoBar() {
           className="flex w-full max-w-md items-center overflow-hidden rounded-[12px] border border-white bg-white/90 text-neutral-800"
           onSubmit={(e) => e.preventDefault()}
         >
-          <span className="flex shrink-0 items-center gap-1 self-stretch border-r border-white bg-brand-indigo/50 px-3 py-2 text-sm text-white">
+          <span className="flex shrink-0 items-center gap-1 self-stretch border-r border-white bg-gray-muted px-3 py-2 text-sm text-white">
             🇺🇸 +1
           </span>
           <input

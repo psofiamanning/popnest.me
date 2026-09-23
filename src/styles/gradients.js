@@ -15,7 +15,12 @@ export const bgCtaGradient = 'bg-[linear-gradient(90deg,var(--color-pink-highlig
 
 // Confirmed one-off Figma tokens, kept distinct (see DESIGN_SYSTEM.md) but
 // still sourced from the shared palette instead of their own hardcoded hex.
-export const bgPromoGradient = 'bg-[linear-gradient(90deg,var(--color-pink-highlight)_0%,var(--color-brand-blue-light)_100%)]'
+//
+// Deliberately pink-free: this backs the PromoBar/PerkBanner promo bands,
+// which sit right next to bgCtaGradient buttons — sharing pink-highlight
+// made the button blend into its own background, so this one stays in the
+// navy/blue-light half of the palette instead.
+export const bgPromoGradient = 'bg-[linear-gradient(90deg,var(--color-brand-navy)_0%,var(--color-brand-blue-light)_100%)]'
 export const bgMapPageGradient =
   'bg-[linear-gradient(90deg,var(--color-pink-highlight)_21.15%,var(--color-brand-indigo)_50.96%)]'
 export const bgTimePickerGradient =
