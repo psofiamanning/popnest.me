@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
+import LanguageToggle from './LanguageToggle'
 
 export default function Navbar() {
+  const { t } = useLanguage()
+
   return (
     <header className="sticky top-0 z-30 border-b border-neutral-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
@@ -10,9 +14,12 @@ export default function Navbar() {
           </span>
           <span className="text-lg font-semibold tracking-tight text-neutral-900">popnest.me</span>
         </Link>
-        <span className="hidden rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-500 sm:inline">
-          Demo de portafolio
-        </span>
+        <div className="flex items-center gap-3">
+          <LanguageToggle className="text-neutral-500" />
+          <span className="hidden rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-500 sm:inline">
+            {t('common.demoTag')}
+          </span>
+        </div>
       </div>
     </header>
   )

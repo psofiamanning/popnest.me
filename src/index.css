@@ -1,11 +1,133 @@
 @import "tailwindcss";
 
+/*
+ * Centralized brand palette. Defining colors here (Tailwind v4's @theme)
+ * auto-generates bg-, text-, border-, fill-, etc. utilities for each one
+ * (e.g. --color-brand-indigo makes bg-brand-indigo, text-brand-indigo, ...),
+ * so a global change only ever needs to happen in this one place.
+ * See DESIGN_SYSTEM.md ("Centralized color tokens") for the audit this
+ * palette was built from and what was intentionally left as one-off literals.
+ */
+@theme {
+  --color-brand-indigo: #566dab;
+  --color-brand-navy: #232c45;
+  --color-brand-navy-muted: #3c4c63;
+  --color-brand-blue-light: #7a9ac9;
+  --color-map-surface: #2b3550;
+
+  --color-pink-interactive: #f82b9a;
+  --color-pink-highlight: #f985c4;
+
+  --color-white-warm: #fffbfb;
+  --color-gray-muted: #a49f9f;
+  --color-overlay: #444444;
+
+  --color-label: #cbcaca;
+  --color-placeholder: #8891a8;
+  --color-caption: #d1d5db;
+  --color-tag-lavender: #d7c9e8;
+}
+
 :root {
   color-scheme: light;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #fff;
+}
+
+.brand-map .leaflet-container {
+  font-family: 'Manrope', sans-serif;
+  background: var(--color-map-surface);
+}
+
+.brand-map .leaflet-tile-pane {
+  filter: grayscale(1) invert(1) sepia(1) hue-rotate(185deg) saturate(1.3) brightness(0.85) contrast(1.1);
+}
+
+.map-pin {
+  position: relative;
+  display: grid;
+  width: 52px;
+  height: 28px;
+  box-sizing: border-box;
+  place-items: center;
+  border-radius: 9999px;
+  border: 2px solid #fff;
+  background: var(--color-pink-interactive);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile map-view pins (with pointer tail) — exact Figma tokens */
+.map-pin--dark,
+.map-pin--highlight {
+  border: none;
+  font-family: 'Manrope', sans-serif;
+}
+
+.map-pin--dark {
+  background: var(--color-brand-navy-muted);
+  color: var(--color-white-warm);
+  font-size: 12px;
+}
+
+.map-pin--highlight {
+  background: var(--color-pink-interactive);
+  color: #fff;
+  font-size: 16px;
+}
+
+.map-pin__tail {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid var(--color-brand-navy-muted);
+}
+
+.map-pin--highlight .map-pin__tail {
+  border-top-color: var(--color-pink-interactive);
+}
+
+.map-dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  border: 3px solid #fff;
+  background: var(--color-pink-interactive);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.brand-map .leaflet-tooltip {
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--color-brand-navy-muted);
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.brand-map .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+}
+
+.brand-map .leaflet-bar {
+  border: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.brand-map .leaflet-bar a {
+  color: var(--color-brand-indigo);
 }
