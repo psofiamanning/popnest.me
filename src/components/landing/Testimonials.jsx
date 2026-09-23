@@ -13,7 +13,7 @@ export default function Testimonials() {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-4">
       {TESTIMONIALS.map((item, i) => (
-        <div key={i} className="relative aspect-[4/5] sm:aspect-auto sm:h-[420px]">
+        <div key={i} className="relative aspect-[4/3] sm:aspect-auto sm:h-[420px]">
           <img src={item.photo} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-overlay/60" />
           <div className={`absolute inset-x-3 ${item.top} rounded-lg bg-pink-highlight/30 p-3 text-xs leading-snug text-white`}>
