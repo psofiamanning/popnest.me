@@ -38,7 +38,7 @@ export default function HeroSection() {
             navigate(`/workspace-map?${new URLSearchParams({ where, when })}`)
           }}
         >
-          <label className="block flex-1 rounded-lg border border-white bg-brand-indigo/50 px-4 py-2">
+          <label className="block flex-1 rounded-lg border border-white bg-brand-indigo/50 px-4 py-2 sm:max-w-xs">
             <span className="block text-xs font-semibold text-white/70">{t('hero.where')}</span>
             <input
               value={where}
@@ -56,7 +56,7 @@ export default function HeroSection() {
           </label>
           <button
             type="submit"
-            className={`shrink-0 rounded-lg ${bgCtaGradient} px-8 py-2 text-sm font-semibold text-white-warm sm:py-0`}
+            className={`rounded-lg ${bgCtaGradient} px-8 py-2 text-sm font-semibold text-white-warm sm:flex-1 sm:py-0`}
           >
             {t('hero.go')}
           </button>

@@ -32,7 +32,7 @@ export default function PromoBar() {
           />
           <button
             type="submit"
-            className={`shrink-0 ${bgCtaGradient} px-4 py-2 text-sm font-semibold text-white-warm shadow-lg backdrop-blur-sm`}
+            className={`shrink-0 border border-white ${bgCtaGradient} px-4 py-2 text-sm font-semibold text-white-warm shadow-lg`}
           >
             {t('promoBar.go')}
           </button>
