@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { bgMapPageGradient } from '../../styles/gradients'
+import { Link, useSearchParams } from 'react-router-dom'
+import { bgMapPageGradient, bgCtaGradient } from '../../styles/gradients'
 import { useLanguage } from '../../context/LanguageContext'
 import LanguageToggle from '../LanguageToggle'
 
@@ -11,6 +11,7 @@ const FIELDS = [
 
 export default function WorkspaceHeader({ filters, onChange }) {
   const { t } = useLanguage()
+  const [, setSearchParams] = useSearchParams()
 
   return (
     <header className={`z-20 lg:sticky lg:top-0 px-[10px] pb-[14px] pt-[9px] ${bgMapPageGradient}`}>
@@ -31,6 +32,13 @@ export default function WorkspaceHeader({ filters, onChange }) {
             />
           </label>
         ))}
+        <button
+          type="button"
+          onClick={() => setSearchParams(filters)}
+          className={`h-[52px] shrink-0 rounded-[12px] border border-white ${bgCtaGradient} px-8 text-[16px] font-semibold text-white-warm shadow-[0_4px_4px_rgba(0,0,0,0.25)]`}
+        >
+          {t('hero.go')}
+        </button>
         <div className="ml-auto flex items-center gap-4 self-center">
           <LanguageToggle className="text-white" />
           <span className="text-sm font-medium text-white">{t('common.signUpSignIn')}</span>
