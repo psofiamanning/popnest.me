@@ -6,17 +6,14 @@ export default function Navbar() {
   const { t } = useLanguage()
 
   return (
-    <header className="sticky top-0 z-30 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-30 bg-brand-indigo">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-rose-500 text-sm font-bold text-white">
-            P
-          </span>
-          <span className="text-lg font-semibold tracking-tight text-neutral-900">popnest.me</span>
+        <Link to="/" className="shrink-0">
+          <img src="/images/logo-popnest-white.png" alt="Popnest" className="h-10 w-auto" />
         </Link>
         <div className="flex items-center gap-3">
-          <LanguageToggle className="text-neutral-500" />
-          <span className="hidden rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-500 sm:inline">
+          <LanguageToggle className="text-white" />
+          <span className="hidden rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white sm:inline">
             {t('common.demoTag')}
           </span>
         </div>

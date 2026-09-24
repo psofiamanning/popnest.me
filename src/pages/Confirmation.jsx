@@ -22,14 +22,14 @@ export default function Confirmation() {
       {!booking ? (
         <div className="mx-auto max-w-2xl px-4 py-16 text-center">
           <p className="text-lg font-semibold text-neutral-900">{t('confirmation.notFound')}</p>
-          <Link to="/" className="mt-3 inline-block text-rose-600 underline">
+          <Link to="/" className="mt-3 inline-block text-brand-indigo underline">
             {t('confirmation.backToHome')}
           </Link>
         </div>
       ) : (
         <div className="mx-auto max-w-2xl px-4 py-16">
           <div className="rounded-2xl border border-neutral-200 p-8 text-center shadow-sm">
-            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-100 text-2xl text-emerald-600">
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-indigo/15 text-2xl text-brand-indigo">
               ✓
             </div>
             <h1 className="mt-4 text-2xl font-bold text-neutral-900">{t('confirmation.confirmed')}</h1>
