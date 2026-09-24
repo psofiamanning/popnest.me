@@ -8,7 +8,7 @@ export default function WorkspaceCard({ workspace }) {
   return (
     <Link
       to={`/espacios/${id}`}
-      className="ml-[4px] flex h-[184px] overflow-hidden rounded-[15px] bg-brand-navy-muted text-white transition-opacity hover:opacity-90"
+      className="ml-[4px] flex h-[184px] overflow-hidden rounded-[15px] bg-map-surface text-white transition-opacity hover:opacity-90"
     >
       <img src={photo} alt="" className="h-full w-[120px] shrink-0 object-cover sm:w-[34%] sm:max-w-[300px]" />
       <div className="flex min-w-0 flex-1 flex-col justify-between py-[18px] pl-4 pr-3 sm:pb-[20px] sm:pl-[27px] sm:pr-[27px] sm:pt-[46px]">

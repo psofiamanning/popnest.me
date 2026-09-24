@@ -24,9 +24,9 @@ export default function WorkspaceMap() {
   return (
     <div className={`min-h-screen bg-white`}>
       <WorkspaceHeader filters={filters} onChange={setFilters} />
-      <div className="grid gap-[11px] px-[10px] pb-6 lg:grid-cols-[870fr_604fr] lg:pr-[17px]">
+      <div className="grid gap-[11px] px-[10px] pb-6 pt-[14px] lg:grid-cols-[870fr_604fr] lg:pr-[17px]">
         <div className="flex min-w-0 flex-col">
-          <div className="mt-[40px] grid grid-cols-2 gap-[10px] sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-[10px] sm:grid-cols-4">
             {STRIP_PHOTOS.map(({ src, position }) => (
               <img
                 key={src}
