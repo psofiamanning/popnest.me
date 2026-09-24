@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import WorkspaceHeader, { PAGE_GRADIENT } from '../components/workspace/WorkspaceHeader'
+import WorkspaceHeader from '../components/workspace/WorkspaceHeader'
 import WorkspaceCard from '../components/workspace/WorkspaceCard'
 import MapPanel from '../components/workspace/MapPanel'
 import MobileMapView from '../components/workspace/MobileMapView'
@@ -22,7 +22,7 @@ export default function WorkspaceMap() {
   if (!isDesktop) return <MobileMapView filters={filters} />
 
   return (
-    <div className={`min-h-screen ${PAGE_GRADIENT}`}>
+    <div className={`min-h-screen bg-white`}>
       <WorkspaceHeader filters={filters} onChange={setFilters} />
       <div className="grid gap-[11px] px-[10px] pb-6 lg:grid-cols-[870fr_604fr] lg:pr-[17px]">
         <div className="flex min-w-0 flex-col">
@@ -38,7 +38,7 @@ export default function WorkspaceMap() {
             ))}
           </div>
 
-          <section className="relative mt-[12px] h-[186px] overflow-hidden rounded-[15px] bg-brand-indigo/90 shadow-[0_4px_4px_rgba(0,0,0,0.25),0_4px_4px_rgba(0,0,0,0.25)]">
+          <section className="relative mt-[12px] h-[186px] overflow-hidden rounded-[15px] bg-brand-indigo shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
             <h2 className="flex h-full items-center justify-center px-4 text-center text-[28px] font-semibold leading-[1.2] text-white">
               {t('map.unlockOffer')}
             </h2>

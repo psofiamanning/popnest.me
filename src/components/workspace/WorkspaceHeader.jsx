@@ -3,21 +3,17 @@ import { bgMapPageGradient } from '../../styles/gradients'
 import { useLanguage } from '../../context/LanguageContext'
 import LanguageToggle from '../LanguageToggle'
 
-const PAGE_GRADIENT = `${bgMapPageGradient} bg-fixed`
-
 const FIELDS = [
   { key: 'where', labelKey: 'map.where' },
   { key: 'when', labelKey: 'map.when' },
   { key: 'filter', labelKey: 'map.filter' },
 ]
 
-export { PAGE_GRADIENT }
-
 export default function WorkspaceHeader({ filters, onChange }) {
   const { t } = useLanguage()
 
   return (
-    <header className={`z-20 lg:sticky lg:top-0 px-[10px] pb-[14px] pt-[9px] ${PAGE_GRADIENT}`}>
+    <header className={`z-20 lg:sticky lg:top-0 px-[10px] pb-[14px] pt-[9px] ${bgMapPageGradient}`}>
       <div className="flex flex-wrap items-start gap-x-[13px] gap-y-3">
         <Link to="/" className="mr-[5px] shrink-0">
           <img src="/images/logo-popnest-white.png" alt="Popnest" className="h-[35px] w-[77px] object-contain" />
