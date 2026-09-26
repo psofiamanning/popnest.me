@@ -1,0 +1,126 @@
+{
+  "global": {
+    "color": {
+      "brand": {
+        "indigo": { "value": "#566DAB", "type": "color", "description": "Primary surface: offer card, footers, header end, section bg" },
+        "navy": { "value": "#232C45", "type": "color", "description": "Depth: gradient end, shared footer, dark pins" },
+        "navy-muted": { "value": "#3C4C63", "type": "color", "description": "Small dark UI (mobile top bar)" },
+        "blue-light": { "value": "#7A9AC9", "type": "color", "description": "Light end of gradients" }
+      },
+      "map-surface": { "value": "#2B3550", "type": "color", "description": "Map background and desktop listing cards" },
+      "pink": {
+        "highlight": { "value": "#F985C4", "type": "color", "description": "CTA gradient start, selected states" },
+        "interactive": { "value": "#F82B9A", "type": "color", "description": "Map pins only, never a button fill" }
+      },
+      "text": {
+        "white": { "value": "#FFFFFF", "type": "color" },
+        "white-warm": { "value": "#FFFBFB", "type": "color", "description": "Text on CTA buttons and header controls" },
+        "label": { "value": "#CBCACA", "type": "color" },
+        "placeholder": { "value": "#8891A8", "type": "color" },
+        "caption": { "value": "#D1D5DB", "type": "color" }
+      },
+      "neutral": {
+        "gray-muted": { "value": "#A49F9F", "type": "color", "description": "Footer links, +1 country badge" },
+        "overlay": { "value": "#444444", "type": "color", "description": "Photo scrim, use at 60%" },
+        "tag-lavender": { "value": "#D7C9E8", "type": "color", "description": "Tag pill, black text, square corners" }
+      },
+      "exception": {
+        "visa-navy": { "value": "#1A1F71", "type": "color", "description": "Card-network mark, intentional non-brand color" }
+      }
+    },
+    "gradient": {
+      "cta": { "value": "linear-gradient(90deg, #F985C4 0%, #566DAB 100%)", "type": "color", "description": "Every primary button" },
+      "brand": { "value": "linear-gradient(180deg, #566DAB 0%, #232C45 100%)", "type": "color", "description": "Detail cards, checkout page" },
+      "brand-light": { "value": "linear-gradient(180deg, #566DAB 33.17%, #7A9AC9 100%)", "type": "color", "description": "Rating and amenities cards" },
+      "promo": { "value": "linear-gradient(90deg, #232C45 0%, #7A9AC9 100%)", "type": "color", "description": "Promo bands, add a black 30% scrim" },
+      "map-header": { "value": "linear-gradient(90deg, #F985C4 21.15%, #566DAB 50.96%)", "type": "color", "description": "Desktop map header only" },
+      "time-picker": { "value": "linear-gradient(180deg, #566DAB 45.19%, #F985C4 100%)", "type": "color", "description": "Mobile time picker page" },
+      "policy": { "value": "linear-gradient(180deg, rgba(86,109,171,0.8) 0%, #232C45 87.5%)", "type": "color", "description": "Need to know / keep in mind cards" },
+      "menu": { "value": "linear-gradient(180deg, rgba(249,133,196,0.9) 7.21%, rgba(86,109,171,0.9) 26.92%)", "type": "color", "description": "Mobile menu drawer" }
+    },
+    "glass": {
+      "fill": { "value": "rgba(255,255,255,0.10)", "type": "color" },
+      "border": { "value": "rgba(255,255,255,0.30)", "type": "color" },
+      "header-field-fill": { "value": "rgba(86,109,171,0.5)", "type": "color" }
+    },
+    "fontFamilies": {
+      "base": { "value": "Manrope", "type": "fontFamilies" }
+    },
+    "fontWeights": {
+      "regular": { "value": "400", "type": "fontWeights" },
+      "medium": { "value": "500", "type": "fontWeights" },
+      "semibold": { "value": "600", "type": "fontWeights" },
+      "bold": { "value": "700", "type": "fontWeights" },
+      "extrabold": { "value": "800", "type": "fontWeights" }
+    },
+    "typography": {
+      "desktop": {
+        "hero-headline": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.extrabold}", "fontSize": "80", "lineHeight": "110%" }, "type": "typography" },
+        "hero-subheading": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.semibold}", "fontSize": "18", "lineHeight": "140%", "textCase": "uppercase" }, "type": "typography" },
+        "offer-title": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.semibold}", "fontSize": "28", "lineHeight": "120%" }, "type": "typography" },
+        "listing-name": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.semibold}", "fontSize": "22", "lineHeight": "120%" }, "type": "typography" },
+        "price": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.semibold}", "fontSize": "26", "lineHeight": "110%" }, "type": "typography" },
+        "price-caption": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "12", "lineHeight": "130%" }, "type": "typography" },
+        "filter-label": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "14", "lineHeight": "16" }, "type": "typography" },
+        "filter-value": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "17", "lineHeight": "19" }, "type": "typography" },
+        "meta": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "13", "lineHeight": "130%" }, "type": "typography" },
+        "body": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "14", "lineHeight": "150%" }, "type": "typography" },
+        "list-item": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "14", "lineHeight": "30" }, "type": "typography" },
+        "card-title": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.semibold}", "fontSize": "16", "lineHeight": "19" }, "type": "typography" },
+        "button": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.semibold}", "fontSize": "14", "lineHeight": "17" }, "type": "typography" }
+      },
+      "mobile": {
+        "screen-title": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "30", "lineHeight": "35" }, "type": "typography" },
+        "space-title": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.bold}", "fontSize": "20", "lineHeight": "22" }, "type": "typography" },
+        "detail-meta": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "14", "lineHeight": "130%" }, "type": "typography" },
+        "row-text": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "14", "lineHeight": "130%" }, "type": "typography" },
+        "back-link": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "16", "lineHeight": "130%" }, "type": "typography" },
+        "button": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.bold}", "fontSize": "16", "lineHeight": "130%" }, "type": "typography" },
+        "button-large": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.bold}", "fontSize": "18", "lineHeight": "130%" }, "type": "typography" },
+        "picker-title": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "16", "lineHeight": "130%" }, "type": "typography" },
+        "picker-description": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.medium}", "fontSize": "13", "lineHeight": "130%" }, "type": "typography" },
+        "wheel-selected": { "value": { "fontFamily": "{fontFamilies.base}", "fontWeight": "{fontWeights.bold}", "fontSize": "18", "lineHeight": "28" }, "type": "typography" }
+      }
+    },
+    "borderRadius": {
+      "xs": { "value": "4", "type": "borderRadius" },
+      "sm": { "value": "8", "type": "borderRadius" },
+      "card": { "value": "10", "type": "borderRadius", "description": "Detail cards, glass rows, mobile buttons, map panel" },
+      "field": { "value": "12", "type": "borderRadius", "description": "Header fields, promo phone control, map GO" },
+      "large": { "value": "15", "type": "borderRadius", "description": "Listing/offer cards, landmark photos" },
+      "photo-mobile": { "value": "16", "type": "borderRadius" },
+      "pill-new-card": { "value": "20", "type": "borderRadius" },
+      "pill-picker": { "value": "24", "type": "borderRadius" },
+      "segmented": { "value": "30", "type": "borderRadius" },
+      "full": { "value": "999", "type": "borderRadius" }
+    },
+    "boxShadow": {
+      "standard": { "value": { "x": "0", "y": "4", "blur": "4", "spread": "0", "color": "rgba(0,0,0,0.25)", "type": "dropShadow" }, "type": "boxShadow" },
+      "floating": { "value": { "x": "0", "y": "8", "blur": "20", "spread": "0", "color": "rgba(0,0,0,0.25)", "type": "dropShadow" }, "type": "boxShadow" }
+    },
+    "spacing": {
+      "card-gap": { "value": "10", "type": "spacing" },
+      "map-gutter-left": { "value": "10", "type": "spacing" },
+      "map-gutter-right": { "value": "17", "type": "spacing" },
+      "map-top-gap": { "value": "14", "type": "spacing" },
+      "column-gap": { "value": "11", "type": "spacing" }
+    },
+    "sizing": {
+      "breakpoint-sm": { "value": "640", "type": "sizing" },
+      "breakpoint-lg": { "value": "1024", "type": "sizing", "description": "Desktop/mobile layout switch" },
+      "content-max": { "value": "1152", "type": "sizing" },
+      "map-header-height": { "value": "75", "type": "sizing" },
+      "button-height-checkout": { "value": "43", "type": "sizing" },
+      "button-height-picker": { "value": "48", "type": "sizing" },
+      "button-height-payment": { "value": "50", "type": "sizing" },
+      "button-height-map-go": { "value": "52", "type": "sizing" },
+      "listing-card-height": { "value": "184", "type": "sizing" },
+      "offer-card-height": { "value": "186", "type": "sizing" },
+      "map-panel-height": { "value": "736", "type": "sizing" },
+      "frame-desktop": { "value": "1512", "type": "sizing" },
+      "frame-mobile": { "value": "393", "type": "sizing" }
+    }
+  },
+  "$themes": [],
+  "$metadata": { "tokenSetOrder": ["global"] }
+}

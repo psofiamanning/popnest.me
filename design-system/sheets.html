@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Popnest Design System — sheets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#566DAB; --navy:#232C45; --blue-light:#7A9AC9; --map:#2B3550; --navy-muted:#3C4C63;
+    --pink-i:#F82B9A; --pink-h:#F985C4; --warm:#FFFBFB; --gray:#A49F9F; --overlay:#444444;
+    --label:#CBCACA; --placeholder:#8891A8; --caption:#D1D5DB; --lav:#D7C9E8;
+    --cta:linear-gradient(90deg,#F985C4 0%,#566DAB 100%);
+    --ink:#1B2338; --mute:#5B6478; --line:#E4E7EF; --bg:#FFFFFF; --soft:#F5F6FA;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font-family:"Manrope",system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  .sheet{display:none;width:1440px;padding:64px 72px 40px;background:var(--bg);position:relative}
+  .sheet:target{display:block}
+  body.all .sheet{display:block;margin-bottom:24px}
+  .kicker{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-i)}
+  h1{font-size:56px;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:10px 0 8px}
+  .lead{font-size:18px;color:var(--mute);max-width:900px;line-height:1.5}
+  h2{font-size:22px;font-weight:800;margin:44px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+  h3{font-size:15px;font-weight:800;margin:0 0 6px}
+  p,li,td,th{font-size:14px;line-height:1.5}
+  .mut{color:var(--mute)}
+  .foot{margin-top:56px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .sw .c{height:84px;display:flex;align-items:flex-end;padding:8px 10px;font-size:12px;font-weight:700}
+  .sw .t{padding:10px 12px}
+  .sw b{display:block;font-size:14px}.sw code{font-size:12px;color:var(--mute)}
+  .sw p{font-size:12px;color:var(--mute);margin-top:4px;line-height:1.4}
+  code{font-family:ui-monospace,Menlo,monospace}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);padding:8px 10px;border-bottom:2px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.k{font-weight:700;white-space:nowrap}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff}
+  .dark{background:var(--navy);color:#fff}
+  .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--soft);color:var(--mute)}
+  .do,.dont{border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.5}
+  .do{background:#ECF7F0;border:1px solid #BFE3CB}.dont{background:#FDEEEE;border:1px solid #F3C4C4}
+  .do b{color:#1E7A45}.dont b{color:#B3262C}
+  .btn{display:inline-flex;align-items:center;justify-content:center;color:var(--warm);font-weight:700}
+  .cta{background:var(--cta)}
+  .glass{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);border-radius:10px;backdrop-filter:blur(10px);box-shadow:0 4px 4px rgba(0,0,0,.25);color:#fff}
+  .spec{padding-left:18px}.spec li{margin:0 0 4px 0}
+  .row{display:flex;gap:16px;align-items:flex-start}
+  .phone{width:226px;height:400px;border-radius:22px;border:6px solid var(--ink);overflow:hidden;position:relative;flex:none}
+  .lay{border:2px dashed var(--line);border-radius:12px;padding:12px}
+</style>
+</head>
+<body>
+
+<!-- =========================== 01 COLORS =========================== -->
+<section class="sheet" id="colors">
+  <div class="kicker">Popnest · Design System · 01</div>
+  <h1>Color &amp; gradients</h1>
+  <p class="lead">One palette, used by role. Pink means “act or selected”; indigo and navy build every surface; nothing decorative is pink. All tokens exist once in code (<code>src/index.css</code> @theme) and as gradients in <code>src/styles/gradients.js</code>.</p>
+
+  <h2>Brand palette</h2>
+  <div class="grid g5">
+    <div class="sw"><div class="c" style="background:#566DAB;color:#fff">Aa</div><div class="t"><b>brand-indigo</b><code>#566DAB</code><p>Primary surface: offer card, footer, header end, section bg, Navbar.</p></div></div>
+    <div class="sw"><div class="c" style="background:#232C45;color:#fff">Aa</div><div class="t"><b>brand-navy</b><code>#232C45</code><p>Depth: gradient end, Footer (shared), promo start, dark map pins.</p></div></div>
+    <div class="sw"><div class="c" style="background:#7A9AC9;color:#fff">Aa</div><div class="t"><b>brand-blue-light</b><code>#7A9AC9</code><p>Light end of gradients (rating/amenities cards, promo band).</p></div></div>
+    <div class="sw"><div class="c" style="background:#2B3550;color:#fff">Aa</div><div class="t"><b>map-surface</b><code>#2B3550</code><p>Map background and desktop listing cards — same family on purpose.</p></div></div>
+    <div class="sw"><div class="c" style="background:#3C4C63;color:#fff">Aa</div><div class="t"><b>brand-navy-muted</b><code>#3C4C63</code><p>Small dark UI (mobile top bar, reservation card details).</p></div></div>
+  </div>
+
+  <h2>Accent &amp; action</h2>
+  <div class="grid g5">
+    <div class="sw"><div class="c" style="background:#F985C4">Aa</div><div class="t"><b>pink-highlight</b><code>#F985C4</code><p>CTA gradient start; selected rows (border + 40% fill).</p></div></div>
+    <div class="sw"><div class="c" style="background:#F82B9A;color:#fff">Aa</div><div class="t"><b>pink-interactive</b><code>#F82B9A</code><p>Map pins, highlighted (cheapest) pin. Never a button fill.</p></div></div>
+    <div class="sw"><div class="c" style="background:#FFFBFB;border-bottom:1px solid var(--line)">Aa</div><div class="t"><b>white-warm</b><code>#FFFBFB</code><p>Text on CTA buttons and header controls.</p></div></div>
+    <div class="sw"><div class="c" style="background:#D7C9E8">Aa</div><div class="t"><b>tag-lavender</b><code>#D7C9E8</code><p>“Elegant” tag pill. Black text, square corners.</p></div></div>
+    <div class="sw"><div class="c" style="background:#444;color:#fff">Aa</div><div class="t"><b>overlay</b><code>#444444 @60%</code><p>Scrim over hero and testimonial photos.</p></div></div>
+  </div>
+
+  <h2>Neutrals &amp; text</h2>
+  <div class="grid g5">
+    <div class="sw"><div class="c" style="background:#A49F9F;color:#fff">Aa</div><div class="t"><b>gray-muted</b><code>#A49F9F</code><p>Footer links, “+1” country badge.</p></div></div>
+    <div class="sw"><div class="c" style="background:#CBCACA">Aa</div><div class="t"><b>label</b><code>#CBCACA</code><p>Form labels on dark.</p></div></div>
+    <div class="sw"><div class="c" style="background:#8891A8;color:#fff">Aa</div><div class="t"><b>placeholder</b><code>#8891A8</code><p>Input placeholders.</p></div></div>
+    <div class="sw"><div class="c" style="background:#D1D5DB">Aa</div><div class="t"><b>caption</b><code>#D1D5DB</code><p>Secondary captions on dark cards.</p></div></div>
+    <div class="sw"><div class="c" style="background:#fff;border-bottom:1px solid var(--line)">Aa</div><div class="t"><b>white</b><code>#FFFFFF</code><p>All body text on dark surfaces; page body on the map page.</p></div></div>
+  </div>
+
+  <h2>Gradients (each one has one job)</h2>
+  <div class="grid g4">
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(90deg,#F985C4,#566DAB);color:#fff">CTA</div><div class="t"><b>Primary action</b><code>90° #F985C4 0% → #566DAB 100%</code><p>Every primary button. Nothing else uses this.</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(180deg,#566DAB,#232C45);color:#fff">Brand</div><div class="t"><b>Brand surface</b><code>180° #566DAB → #232C45</code><p>Detail cards, checkout page, info card (mobile).</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(180deg,#566DAB 33.17%,#7A9AC9);color:#fff">Brand light</div><div class="t"><b>Brand light</b><code>180° #566DAB 33% → #7A9AC9</code><p>Rating card, amenities card.</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(90deg,#232C45,#7A9AC9);color:#fff">Promo</div><div class="t"><b>Promo bands</b><code>90° #232C45 → #7A9AC9 + black 30%</code><p>Top promo bar + LinkedIn perk band. Pink-free.</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(90deg,#F985C4 21.15%,#566DAB 50.96%);color:#fff">Map header</div><div class="t"><b>Map header</b><code>90° #F985C4 21% → #566DAB 51%</code><p>Desktop map header strip only — not the page body.</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(180deg,#566DAB 45.19%,#F985C4);color:#fff">Time page</div><div class="t"><b>Time picker page</b><code>180° #566DAB 45% → #F985C4</code><p>Only the mobile time-picker screen.</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(180deg,rgba(86,109,171,.8),#232C45 87.5%);color:#fff">Policy</div><div class="t"><b>Policy card</b><code>180° indigo 80% → #232C45 87.5%</code><p>“Need to know / keep in mind” cards.</p></div></div>
+    <div class="sw"><div class="c" style="height:110px;background:linear-gradient(180deg,rgba(249,133,196,.9) 7%,rgba(86,109,171,.9) 27%);color:#fff">Menu</div><div class="t"><b>Menu drawer</b><code>180° pink 90% 7% → indigo 90% 27%</code><p>Mobile menu drawer, translucent.</p></div></div>
+  </div>
+
+  <h2>Color rules</h2>
+  <div class="grid g2">
+    <div class="do"><b>Do</b> — use pink only for actions and selected states; keep promo/decorative bands navy→blue; put a 1px white border on any primary button that sits over a gradient; use solid indigo/navy cards on white pages.</div>
+    <div class="dont"><b>Don’t</b> — reuse the CTA gradient as a background; use pink for large surfaces; make text translucent white on light gradients (add a black/30 scrim or darken the surface until white text hits 4.5:1).</div>
+  </div>
+  <div class="foot"><span>Popnest Design System</span><span>01 / 07 · Colors</span></div>
+</section>
+
+<!-- =========================== 02 TYPE =========================== -->
+<section class="sheet" id="type">
+  <div class="kicker">Popnest · Design System · 02</div>
+  <h1>Typography</h1>
+  <p class="lead">One typeface: <b>Manrope</b> (400 / 500 / 600 / 700 / 800). Hierarchy comes from weight and size, not from a second font. Rule: semibold (600) for the headline-level item of a screen, medium (500) for supporting text, regular (400) for the quietest line.</p>
+
+  <h2>Weights</h2>
+  <div class="grid g5" style="font-size:34px">
+    <div class="card"><div style="font-weight:400">Aa</div><p class="mut">400 Regular · captions</p></div>
+    <div class="card"><div style="font-weight:500">Aa</div><p class="mut">500 Medium · supporting</p></div>
+    <div class="card"><div style="font-weight:600">Aa</div><p class="mut">600 Semibold · headlines</p></div>
+    <div class="card"><div style="font-weight:700">Aa</div><p class="mut">700 Bold · buttons, titles</p></div>
+    <div class="card"><div style="font-weight:800">Aa</div><p class="mut">800 Extrabold · hero</p></div>
+  </div>
+
+  <h2>Desktop scale</h2>
+  <table>
+    <tr><th>Role</th><th>Size / line</th><th>Weight</th><th>Notes</th></tr>
+    <tr><td class="k">Hero headline</td><td>80 / 1.1 (60 at sm, 36 base)</td><td>800</td><td>White, max-width 4xl</td></tr>
+    <tr><td class="k">Hero subheading</td><td>18 · tracking wide, UPPERCASE</td><td>600</td><td>White</td></tr>
+    <tr><td class="k">Offer card title</td><td>28 / 1.2 · centered</td><td>600</td><td>White on indigo</td></tr>
+    <tr><td class="k">Listing name</td><td>22 / 1.2</td><td>600</td><td>White on map-surface</td></tr>
+    <tr><td class="k">Price</td><td>26 / 1.1 · right-aligned</td><td>600</td><td>Caption under it: 12 / 500</td></tr>
+    <tr><td class="k">Filter label / value</td><td>14 / 16 · 17 / 19</td><td>500</td><td>white-warm, map header fields</td></tr>
+    <tr><td class="k">Rating / proximity line</td><td>13 / 1.3</td><td>500 / 400</td><td>White</td></tr>
+    <tr><td class="k">Nav &amp; promo text</td><td>14</td><td>500 (lead sentence 600)</td><td>“Sign Up / Sign In”, promo bar</td></tr>
+    <tr><td class="k">Card title (detail)</td><td>15–16 / 18–19</td><td>600</td><td>“Your Reservation”, “Amenities”</td></tr>
+    <tr><td class="k">List items (amenities)</td><td>14 / 30</td><td>500</td><td>White</td></tr>
+    <tr><td class="k">Button text</td><td>14–16</td><td>600–700</td><td>white-warm on CTA</td></tr>
+  </table>
+
+  <h2>Mobile scale</h2>
+  <table>
+    <tr><th>Role</th><th>Size / line</th><th>Weight</th><th>Notes</th></tr>
+    <tr><td class="k">Screen title (payment / new card)</td><td>30 / 35</td><td>500</td><td>Wraps to 2 lines (max-width ~227)</td></tr>
+    <tr><td class="k">Space title (detail)</td><td>20 / 22</td><td>700</td><td>White on brand gradient</td></tr>
+    <tr><td class="k">Rating / address</td><td>14</td><td>500</td><td>Solid white (not dimmed)</td></tr>
+    <tr><td class="k">Checkout row text</td><td>13–14</td><td>500</td><td>Glass rows; total row 700</td></tr>
+    <tr><td class="k">Back link</td><td>16 (11 on checkout / new card)</td><td>500</td><td>Chevron ‹ 32px</td></tr>
+    <tr><td class="k">Primary button</td><td>16 (18 payment, 18 BOOK NOW bar)</td><td>700 / 500 / 600</td><td>Pickers use 16 / 500</td></tr>
+    <tr><td class="k">Picker title / description</td><td>16 / 13</td><td>500 / 500</td><td>Description white 90%</td></tr>
+    <tr><td class="k">Wheel rows</td><td>selected 18 bold · ±1 14 · ±2 13 · ±3 11</td><td>—</td><td>Row height 28; outer rows recede in navy, not white</td></tr>
+    <tr><td class="k">Footer (compact)</td><td>13</td><td>400</td><td>Legal row</td></tr>
+  </table>
+
+  <h2>Type rules</h2>
+  <div class="grid g2">
+    <div class="do"><b>Do</b> — leave room for Spanish (≈25% longer): let buttons and labels wrap or grow; keep line-height 1.1–1.3 on headlines.</div>
+    <div class="dont"><b>Don’t</b> — add a second typeface; set fixed widths on text buttons; use white at less than ~80% opacity on a light gradient.</div>
+  </div>
+  <div class="foot"><span>Popnest Design System</span><span>02 / 07 · Typography</span></div>
+</section>
+
+<!-- =========================== 03 COMPONENTS =========================== -->
+<section class="sheet" id="components">
+  <div class="kicker">Popnest · Design System · 03</div>
+  <h1>Buttons &amp; controls</h1>
+  <p class="lead">A three-tier button hierarchy plus a small set of surfaces. Color tells you <i>how important</i> an action is, not which screen it came from.</p>
+
+  <h2>Button hierarchy</h2>
+  <div class="grid g3">
+    <div class="card dark" style="background:linear-gradient(180deg,#566DAB,#232C45)">
+      <span class="tag">Primary</span>
+      <div style="margin:14px 0"><span class="btn cta" style="height:43px;padding:0 34px;border-radius:10px;font-size:16px">BOOK NOW</span></div>
+      <p><b>CTA gradient</b>, white-warm text, radius 10 (desktop 8–12, picker pills 24). One per screen: submit, book, continue, go home. On any gradient or pink surface add a 1px white border.</p>
+    </div>
+    <div class="card dark" style="background:linear-gradient(180deg,#566DAB,#232C45)">
+      <span class="tag">Secondary</span>
+      <div style="margin:14px 0"><span class="btn" style="height:36px;padding:0 24px;border-radius:20px;border:2px solid #fff;font-size:14px;color:#fff">New Card</span></div>
+      <p>Transparent fill, 2px white border, radius 20. A real but non-primary action next to a primary one (“New Card” beside “Continue”).</p>
+    </div>
+    <div class="card dark" style="background:linear-gradient(180deg,#566DAB,#232C45)">
+      <span class="tag">Tertiary</span>
+      <div style="margin:14px 0;color:#fff;font-size:16px;font-weight:500">‹ Back to space details</div>
+      <p>Plain text, no fill or border. Back links, dismiss, minor toggles.</p>
+    </div>
+  </div>
+
+  <h2>Surfaces &amp; fields</h2>
+  <div class="grid g3">
+    <div class="card" style="background:linear-gradient(180deg,#566DAB,#232C45)">
+      <h3 style="color:#fff">Glass row</h3>
+      <div class="glass" style="height:50px;display:flex;align-items:center;padding:0 14px;margin-bottom:8px">Room Type · Day Pass</div>
+      <p style="color:#fff;font-size:12px">bg white 10% · border white 30% (1.5px; 0.5px on pickers) · blur 10 · radius 10 · shadow 0 4 4 25%. All mobile checkout rows.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(90deg,#F985C4 21%,#566DAB 51%)">
+      <h3 style="color:#fff">Header field</h3>
+      <div style="height:52px;border:1px solid #fff;border-radius:12px;background:rgba(86,109,171,.5);box-shadow:0 4px 4px rgba(0,0,0,.25);color:#fff;padding:6px 14px;margin-bottom:8px"><div style="font-size:14px;font-weight:500">Where:</div><div style="font-size:17px;font-weight:500">Mexico City</div></div>
+      <p style="color:#fff;font-size:12px">indigo 50% · 1px white · radius 12 · blur 2 · shadow. Desktop map header and Home search (radius 8).</p>
+    </div>
+    <div class="card">
+      <h3>White input</h3>
+      <div style="height:46px;border-radius:0;background:#fff;border:1px solid var(--line);padding:0 12px;display:flex;align-items:center;color:var(--placeholder);margin-bottom:8px">Wed, Dec 10</div>
+      <p class="mut" style="font-size:12px">White fill, black text 14/400, square corners (reservation card) — an intentional token. Mobile card forms use bordered radius-20 fields.</p>
+    </div>
+  </div>
+
+  <h2>Small components</h2>
+  <div class="grid g4">
+    <div class="card"><h3>Filter pill</h3><span style="display:inline-block;padding:8px 18px;border-radius:999px;border:1px solid #fff;background:var(--indigo);color:#fff;font-weight:600">Where: Condesa</span><p class="mut" style="margin-top:8px;font-size:12px">rounded-full · indigo 50% · white border (mobile map)</p></div>
+    <div class="card"><h3>Tag</h3><span style="display:inline-block;padding:4px 10px;background:var(--lav);color:#000;font-size:13px;font-weight:600">Elegant</span><p class="mut" style="margin-top:8px;font-size:12px">lavender · black text · square</p></div>
+    <div class="card"><h3>Map pins</h3><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--pink-i);border:2px solid #fff;vertical-align:middle"></span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;background:var(--navy);color:#fff;font-weight:700;font-size:13px">$300</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;background:var(--pink-i);color:#fff;font-weight:700;font-size:13px">$25</span><p class="mut" style="margin-top:8px;font-size:12px">desktop dot → price pill at zoom ≥13; mobile always price, cheapest highlighted</p></div>
+    <div class="card"><h3>Language toggle</h3><span style="display:inline-flex;border-radius:999px;border:1px solid var(--line);padding:3px;font-size:12px;font-weight:700"><span style="padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.12)">EN</span><span style="padding:4px 10px;color:var(--mute)">ES</span></span><p class="mut" style="margin-top:8px;font-size:12px">pill pair · active = current 20% tint · inherits text color</p></div>
+  </div>
+
+  <h2>Promo control</h2>
+  <div class="card" style="background:linear-gradient(90deg,#232C45,#7A9AC9);position:relative">
+    <div style="display:flex;max-width:520px;border:1px solid #fff;border-radius:12px;overflow:hidden;background:rgba(255,255,255,.9)"><span style="background:var(--gray);color:#fff;padding:10px 14px;font-size:14px;border-right:1px solid #fff">🇺🇸 +1</span><span style="flex:1;padding:10px 12px;color:var(--mute);font-size:14px">Mobile Number</span><span class="btn cta" style="padding:0 20px;border-left:1px solid #fff;font-size:14px">GO</span></div>
+    <p style="color:#fff;margin-top:10px;font-size:12px">radius 12 · white border · gray-muted country badge (never indigo) · GO = CTA gradient + white border. Band itself is navy→blue with a black/30 scrim.</p>
+  </div>
+  <div class="foot"><span>Popnest Design System</span><span>03 / 07 · Components</span></div>
+</section>
+
+<!-- =========================== 04 SHAPE =========================== -->
+<section class="sheet" id="shape">
+  <div class="kicker">Popnest · Design System · 04</div>
+  <h1>Shape, effects &amp; accessibility</h1>
+  <p class="lead">Radii, shadows, spacing rhythm, breakpoints and the contrast floor that every screen is held to.</p>
+
+  <h2>Corner radii</h2>
+  <div class="grid g5">
+    <div class="card"><div style="height:56px;background:var(--indigo);border-radius:4px"></div><p><b>4–8</b><br><span class="mut">chips, Home search fields (8), card visuals (5)</span></p></div>
+    <div class="card"><div style="height:56px;background:var(--indigo);border-radius:10px"></div><p><b>10</b><br><span class="mut">detail cards, glass rows, mobile buttons, map panel</span></p></div>
+    <div class="card"><div style="height:56px;background:var(--indigo);border-radius:12px"></div><p><b>12</b><br><span class="mut">header fields, promo phone control, map GO</span></p></div>
+    <div class="card"><div style="height:56px;background:var(--indigo);border-radius:15px"></div><p><b>15–16</b><br><span class="mut">listing/offer cards, landmark photos, detail photo</span></p></div>
+    <div class="card"><div style="height:56px;background:var(--indigo);border-radius:28px"></div><p><b>20 · 24 · 30 · full</b><br><span class="mut">New Card pill 20, picker buttons 24, segmented 30, filter pills full</span></p></div>
+  </div>
+
+  <h2>Effects</h2>
+  <div class="grid g4">
+    <div class="card" style="background:var(--soft)"><div style="height:56px;background:#fff;border-radius:10px;box-shadow:0 4px 4px rgba(0,0,0,.25)"></div><p><b>Standard shadow</b><br><code>0 4px 4px rgba(0,0,0,.25)</code><br><span class="mut">fields, offer card, GO buttons</span></p></div>
+    <div class="card" style="background:var(--soft)"><div style="height:56px;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.25)"></div><p><b>Floating shadow</b><br><code>0 8px 20px rgba(0,0,0,.25)</code><br><span class="mut">drawers, elevated cards</span></p></div>
+    <div class="card" style="background:linear-gradient(180deg,#566DAB,#232C45)"><div class="glass" style="height:56px"></div><p style="color:#fff"><b>Glass</b><br><code>white 10% · border white 30% · blur 10</code></p></div>
+    <div class="card" style="background:linear-gradient(90deg,#232C45,#7A9AC9)"><div style="height:56px;background:linear-gradient(90deg,rgba(0,0,0,.3),rgba(0,0,0,.3))"></div><p style="color:#fff"><b>Scrims</b><br><code>#444 @60% on photos · black 30% on promo</code></p></div>
+  </div>
+
+  <h2>Spacing, layout &amp; breakpoints</h2>
+  <div class="grid g2">
+    <table>
+      <tr><th>Rule</th><th>Value</th></tr>
+      <tr><td class="k">Card gap</td><td>10 px (photo strip 10, list 10, offer→list 10–12)</td></tr>
+      <tr><td class="k">Map page gutters</td><td>10 left · 17 right · 14 top under header · 11 between columns</td></tr>
+      <tr><td class="k">Content width</td><td>Home / Navbar max-width 1152 (6xl), 16 / 24 side padding</td></tr>
+      <tr><td class="k">Columns (map)</td><td>870 fr list · 604 fr map</td></tr>
+      <tr><td class="k">Columns (detail)</td><td>2/3 content (746) · 1/3 reservation (373)</td></tr>
+      <tr><td class="k">Header</td><td>75 px tall (9 + 52 + 14) · sticky on desktop</td></tr>
+    </table>
+    <table>
+      <tr><th>Breakpoint</th><th>Behavior</th></tr>
+      <tr><td class="k">&lt; 640 (base)</td><td>Single column; Home stack, GO full width</td></tr>
+      <tr><td class="k">≥ 640 (sm)</td><td>Home search on one row; testimonials in 4 columns</td></tr>
+      <tr><td class="k">≥ 1024 (lg)</td><td><b>Layout switch.</b> Map, detail and confirmation swap between separate desktop and mobile components (only one mounts)</td></tr>
+      <tr><td class="k">Mobile pages</td><td>min-height 100dvh; compact footer pinned with margin-top:auto</td></tr>
+    </table>
+  </div>
+
+  <h2>Accessibility floor</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Contrast</h3><ul class="spec"><li>White text must reach <b>4.5 : 1</b> on its background (WCAG AA).</li><li>Light or gradient backgrounds get a black/30 scrim (promo bands, rating and amenities cards).</li><li>The mobile confirmation receipt tints itself from the photo, then darkens until white text passes 4.5 : 1.</li></ul></div>
+    <div class="card"><h3>Controls &amp; semantics</h3><ul class="spec"><li>Real buttons, labels and inputs; semantic footer / nav / lists.</li><li>Tap targets ≥ 43 px tall on mobile primary actions.</li><li>Language toggle is a labeled button pair; choice persists.</li><li>Respect reduced-motion for any animated band.</li></ul></div>
+  </div>
+  <div class="foot"><span>Popnest Design System</span><span>04 / 07 · Shape &amp; effects</span></div>
+</section>
+
+<!-- =========================== 05 DESKTOP =========================== -->
+<section class="sheet" id="desktop">
+  <div class="kicker">Popnest · Design System · 05</div>
+  <h1>Desktop layouts</h1>
+  <p class="lead">Applies at ≥ 1024 px (Home also adapts from 640). Frame width used in Figma: 1512.</p>
+
+  <div class="grid g2" style="margin-top:28px">
+    <div>
+      <h3>Home · <code>/</code></h3>
+      <div class="lay">
+        <div style="height:34px;border-radius:6px;background:linear-gradient(90deg,#232C45,#7A9AC9);color:#fff;font-size:11px;padding:9px 10px">Promo bar — navy→blue + 30% scrim · phone control right</div>
+        <div style="height:190px;margin-top:8px;border-radius:6px;background:#8b7a6b;color:#fff;padding:10px;position:relative"><div style="position:absolute;inset:0;background:rgba(68,68,68,.6);border-radius:6px"></div><div style="position:relative;font-size:11px">logo · EN/ES · Sign Up<br><b style="font-size:22px">On Demand Coworking Spaces</b><br>subheading 18/600 UPPERCASE<br><span style="display:inline-block;margin-top:6px;border:1px solid #fff;border-radius:8px;padding:4px 14px;background:rgba(86,109,171,.5)">Where</span> <span style="display:inline-block;border:1px solid #fff;border-radius:8px;padding:4px 14px;background:rgba(86,109,171,.5)">When</span> <span class="btn cta" style="padding:5px 40px;border-radius:8px;font-size:11px">GO</span></div></div>
+        <div style="height:26px;margin-top:8px;border-radius:6px;background:linear-gradient(90deg,#232C45,#7A9AC9);color:#fff;font-size:11px;padding:6px 10px">Perk band — LinkedIn premium</div>
+        <div style="height:40px;margin-top:8px;border-radius:6px;background:var(--indigo);color:#fff;font-size:11px;padding:12px 10px">Why Popnest — solid indigo</div>
+        <div style="height:40px;margin-top:8px;border-radius:6px;background:#9a8f88;color:#fff;font-size:11px;padding:12px 10px">4 testimonials · 420 tall · photo + 60% scrim + pink 30% bubble</div>
+        <div style="height:26px;margin-top:8px;border-radius:6px;background:var(--indigo);color:#fff;font-size:11px;padding:6px 10px">Footer — indigo, white text, gray-muted links</div>
+      </div>
+    </div>
+    <div>
+      <h3>Map · <code>/workspace-map</code></h3>
+      <div class="lay">
+        <div style="height:40px;border-radius:6px;background:linear-gradient(90deg,#F985C4 21%,#566DAB 51%);color:#fff;font-size:11px;padding:12px 10px">Header (sticky) — logo · Where · When · Filter · GO · EN/ES</div>
+        <div style="display:grid;grid-template-columns:1.45fr 1fr;gap:8px;margin-top:8px">
+          <div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px"><div style="height:34px;border-radius:6px;background:#b9a99a"></div><div style="height:34px;border-radius:6px;background:#b9a99a"></div><div style="height:34px;border-radius:6px;background:#b9a99a"></div><div style="height:34px;border-radius:6px;background:#b9a99a"></div></div>
+            <div style="height:50px;margin-top:6px;border-radius:8px;background:var(--indigo);color:#fff;font-size:11px;padding:18px 10px;text-align:center">Offer card — solid indigo</div>
+            <div style="height:44px;margin-top:6px;border-radius:8px;background:var(--map);color:#fff;font-size:11px;padding:15px 10px">Listing card — map-surface, photo left</div>
+            <div style="height:44px;margin-top:6px;border-radius:8px;background:var(--map);color:#fff;font-size:11px;padding:15px 10px">Listing card</div>
+          </div>
+          <div style="border-radius:8px;background:var(--map);color:#fff;font-size:11px;padding:10px">Map — sticky 89 px, 736 tall, radius 10, pink pins</div>
+        </div>
+        <p class="mut" style="margin-top:8px;font-size:12px">Body is white. Gradient only on the header.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:22px">
+    <div>
+      <h3>Space detail · <code>/espacios/:id</code></h3>
+      <div class="lay">
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:8px">
+          <div><div style="height:56px;border-radius:8px;background:#b9a99a;color:#fff;font-size:11px;padding:20px 10px">Hero photo · radius 15</div>
+            <div style="height:36px;margin-top:6px;border-radius:6px;background:linear-gradient(180deg,#566DAB,#232C45);color:#fff;font-size:11px;padding:11px 10px">Why we like it (brand gradient)</div>
+            <div style="height:36px;margin-top:6px;border-radius:6px;background:linear-gradient(180deg,#566DAB 33%,#7A9AC9);color:#fff;font-size:11px;padding:11px 10px">Amenities (brand light)</div>
+            <div style="height:36px;margin-top:6px;border-radius:6px;background:linear-gradient(180deg,rgba(86,109,171,.8),#232C45 87%);color:#fff;font-size:11px;padding:11px 10px">Need to know / keep in mind (policy)</div></div>
+          <div><div style="height:56px;border-radius:6px;background:linear-gradient(180deg,#566DAB 33%,#7A9AC9);color:#fff;font-size:11px;padding:20px 8px">Rating card</div>
+            <div style="height:80px;margin-top:6px;border-radius:6px;background:linear-gradient(180deg,#566DAB,#232C45);color:#fff;font-size:11px;padding:8px">Your Reservation ×3, aligned to left rows · white fields 324×60 · Reserve Now 324×37</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Confirmation · <code>/confirmacion/:id</code></h3>
+      <div class="lay">
+        <div style="height:30px;border-radius:6px;background:var(--indigo);color:#fff;font-size:11px;padding:8px 10px">Navbar — white logo 40 px on indigo · EN/ES · Portfolio demo</div>
+        <div style="margin:8px auto;width:70%;border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center;font-size:11px;box-shadow:0 1px 2px rgba(0,0,0,.08)"><div style="width:26px;height:26px;border-radius:50%;background:rgba(86,109,171,.15);color:var(--indigo);margin:0 auto 4px;line-height:26px">✓</div><b>Booking confirmed!</b><div style="background:var(--soft);border-radius:8px;padding:6px;margin:6px 0;text-align:left">code · space · city · date · time · people · total</div><span class="btn cta" style="padding:5px 14px;border-radius:8px;font-size:11px">Search another space</span></div>
+        <div style="height:24px;border-radius:6px;background:var(--navy);color:#fff;font-size:11px;padding:5px 10px">Footer — navy, white text</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Desktop rules</h2>
+  <div class="grid g3">
+    <div class="card"><ul class="spec"><li>Sticky header (map) is the only sticky bar; on mobile it scrolls away.</li><li>Map panel sticks at header height + 14 px; never touches the header.</li></ul></div>
+    <div class="card"><ul class="spec"><li>Cards on white pages are solid colors, not translucent tints.</li><li>Photos: radius 15, 4-up strip 210×144, gap 10.</li></ul></div>
+    <div class="card"><ul class="spec"><li>Shared Navbar/Footer: white logo on indigo / navy — used by Confirmation and 404.</li><li>Only one primary button per section.</li></ul></div>
+  </div>
+  <div class="foot"><span>Popnest Design System</span><span>05 / 07 · Desktop</span></div>
+</section>
+
+<!-- =========================== 06 MOBILE =========================== -->
+<section class="sheet" id="mobile">
+  <div class="kicker">Popnest · Design System · 06</div>
+  <h1>Mobile layouts</h1>
+  <p class="lead">Applies below 1024 px. Frame width used in Figma: 393. Every booking-flow screen shares the same dark brand background, glass rows and a pinned compact footer.</p>
+
+  <div class="row" style="margin-top:28px;justify-content:space-between;flex-wrap:nowrap">
+    <div><div class="phone" style="background:var(--map);color:#fff;font-size:11px;padding:10px"><div style="display:flex;justify-content:space-between"><span>☰</span><b>Popnest</b><span></span></div><div style="margin-top:8px;border:1px solid #fff;border-radius:999px;padding:5px 10px;background:rgba(86,109,171,.5)">Where: Los Angeles</div><div style="margin-top:6px;border:1px solid #fff;border-radius:999px;padding:5px 10px;background:rgba(86,109,171,.5)">1 Day Pass ⚙</div><div style="margin-top:70px"><span style="background:var(--navy);padding:3px 8px;border-radius:999px;border:1px solid #fff">$300</span> <span style="background:var(--pink-i);padding:3px 8px;border-radius:999px">$25</span></div><div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:rgba(35,44,69,.9);padding:8px">card strip →</div></div><p style="margin-top:8px"><b>Map</b><br><span class="mut">full-bleed dark map, 100dvh</span></p></div>
+    <div><div class="phone" style="background:#fff;font-size:11px"><div style="height:24px;padding:5px 8px">☰ <b>Popnest</b></div><div style="height:90px;margin:0 4px;border-radius:12px;background:#b9a99a"></div><div style="margin:6px 4px;border-radius:8px;padding:8px;background:linear-gradient(180deg,#566DAB,#232C45);color:#fff;height:110px"><span style="background:var(--lav);color:#000;padding:1px 6px">Elegant</span><br><b style="font-size:13px">Coworking Santa María</b><br>★ 92% · 2 Ratings</div><div style="position:absolute;bottom:0;left:0;right:0;height:26px;background:var(--cta);color:#fff;text-align:center;line-height:26px;font-weight:700">BOOK NOW | 350 MXN</div></div><p style="margin-top:8px"><b>Detail</b><br><span class="mut">photo 310/284 r16 · brand card · fixed CTA bar</span></p></div>
+    <div><div class="phone" style="background:linear-gradient(180deg,#566DAB,#232C45);color:#fff;font-size:10px;padding:8px"><div>‹ Back to space details</div><div class="glass" style="height:26px;margin-top:8px;padding:6px 8px">Guest · Required</div><div class="glass" style="height:24px;margin-top:5px;padding:5px 8px">Room Type</div><div class="glass" style="height:44px;margin-top:5px;padding:5px 8px">Check-In / Check-Out</div><div class="glass" style="height:40px;margin-top:5px;padding:5px 8px">1 day × MXN · Taxes · Total</div><div class="glass" style="height:22px;margin-top:5px;padding:4px 8px">Payment Method</div><div class="btn cta" style="height:26px;border-radius:8px;margin-top:8px;width:100%;font-size:11px">BOOK NOW</div></div><p style="margin-top:8px"><b>Checkout</b><br><span class="mut">brand gradient + glass rows</span></p></div>
+    <div><div class="phone" style="background:linear-gradient(180deg,#566DAB 45%,#F985C4);color:#fff;font-size:10px;padding:8px;text-align:center"><b style="font-size:12px">Select a Time</b><div style="margin:8px auto;width:120px;border:.5px solid #fff;border-radius:30px;padding:3px;display:flex"><span style="flex:1;background:rgba(249,133,196,.4);border-radius:30px">Start</span><span style="flex:1">End</span></div><div style="margin-top:10px;background:rgba(217,217,217,.2);border-radius:5px;padding:5px">‹ wheel ›<br><b style="font-size:14px">9 : 00 AM</b></div><div class="btn cta" style="height:30px;width:120px;border-radius:24px;margin:14px auto 0;font-size:11px">Submit</div></div><p style="margin-top:8px"><b>Pickers</b><br><span class="mut">28 px rows · 7 visible</span></p></div>
+    <div><div class="phone" style="background:linear-gradient(180deg,#566DAB,#8FA3D9);color:#fff;font-size:10px;padding:8px"><b style="font-size:14px">Payment Card</b><div style="margin-top:8px;height:68px;border-radius:5px;background:rgba(190,126,126,.79);padding:6px">•••• 1234<br>Ray Evans <span style="float:right;background:var(--pink-h);padding:1px 5px;border-radius:5px">Selected</span></div><div style="margin-top:6px;border:2px solid #fff;border-radius:20px;padding:4px;text-align:center;width:80px">New Card</div><div class="btn cta" style="height:32px;border-radius:10px;margin-top:20px;width:100%;font-size:12px">Continue</div></div><p style="margin-top:8px"><b>Payment</b><br><span class="mut">card 319×185 r5 · 50 px CTA</span></p></div>
+  </div>
+
+  <h2>Mobile rules</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Flow &amp; footer</h3><ul class="spec"><li>Room type, date, time, payment and new card all return to Checkout through URL params.</li><li>Screen = <code>min-h-[100dvh]</code> block, compact footer below it (no columns, small logo).</li></ul></div>
+    <div class="card"><h3>Rows &amp; heights</h3><ul class="spec"><li>Checkout: guest 60 · room 50 · check-in/out 125 · price 109 · payment 44 · promo 44.</li><li>Room-type rows 37; selected = pink-highlight 0.5px border + 40% fill.</li><li>Primary buttons: 43 (checkout, save card) · 48 pill (pickers) · 50 (payment).</li></ul></div>
+    <div class="card"><h3>Special cases</h3><ul class="spec"><li>VISA badge stays Visa navy <code>#1A1F71</code> — a card-network mark, not brand color (intentional).</li><li>Confirmation receipt tints from its photo; text must still hit 4.5 : 1.</li><li>Menu drawer uses the translucent pink→indigo menu gradient and holds the EN/ES row.</li></ul></div>
+  </div>
+
+  <h2>Mobile confirmation &amp; new card</h2>
+  <div class="grid g2">
+    <div class="card"><b>Confirmation</b> — photo-backed receipt (Location, Check-in/out, Guests, Space rules, Cancellation, Payment pills) over a dominant-color tint, then “Thank you for booking”. Primary CTA: 43 px, radius 10, 16/700 uppercase.</div>
+    <div class="card"><b>Add a new payment card</b> — title 30/35, fields radius 20 with bordered boxes, expired date + security code side by side (min-w-0 so they never overflow), “Save Card” = primary CTA 43 px.</div>
+  </div>
+  <div class="foot"><span>Popnest Design System</span><span>06 / 07 · Mobile</span></div>
+</section>
+
+<!-- =========================== 07 RULES =========================== -->
+<section class="sheet" id="rules">
+  <div class="kicker">Popnest · Design System · 07</div>
+  <h1>Brand, language &amp; rules</h1>
+  <p class="lead">The decisions that keep the system consistent as it grows.</p>
+
+  <h2>Logo &amp; favicon</h2>
+  <div class="grid g4">
+    <div class="card" style="background:var(--indigo);text-align:center"><img src="../public/images/logo-popnest-white.png" alt="" style="height:64px"><p style="color:#fff;margin-top:8px">White logo on indigo, navy or photo scrim</p></div>
+    <div class="card" style="text-align:center"><img src="../public/images/logo-popnest.png" alt="" style="height:64px"><p class="mut" style="margin-top:8px">Standard logo on white / light</p></div>
+    <div class="card" style="text-align:center"><img src="../public/apple-touch-icon.png" alt="" style="height:64px;border-radius:14px"><p class="mut" style="margin-top:8px">“P” mark — favicon 16/32/48 + touch icon</p></div>
+    <div class="card"><ul class="spec"><li>Header logo heights: 35 (map), 40 (Navbar), 48 (Home hero).</li><li>Never recolor the wordmark; keep clear space ≥ logo height / 2.</li></ul></div>
+  </div>
+
+  <h2>Language</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Default &amp; toggle</h3><ul class="spec"><li>English by default for everyone; no location-based detection.</li><li>EN/ES toggle in every desktop header, Confirmation Navbar and the mobile menu (“🌍 Language”).</li><li>Choice persists (localStorage key <code>popnest_language</code>).</li></ul></div>
+    <div class="card"><h3>Content</h3><ul class="spec"><li>~180 strings × 2 languages, one flat dictionary; workspace data stores keys, not text.</li><li>Icons look up by stable id, never by translated label.</li></ul></div>
+    <div class="card"><h3>Layout for Spanish</h3><ul class="spec"><li>Expect ~25% longer strings — allow wrap; buttons size to content or fill available width.</li><li>Test every screen in both languages before shipping.</li></ul></div>
+  </div>
+
+  <h2>Golden rules</h2>
+  <div class="grid g2">
+    <div class="do"><b>1 · One primary action per screen</b> — the CTA gradient, nowhere else.</div>
+    <div class="do"><b>2 · Roles, not preferences</b> — pink = action/selection; indigo/navy = surface; white = text.</div>
+    <div class="do"><b>3 · Separate decoration from action</b> — promo/decorative bands never share a hue with the CTA.</div>
+    <div class="do"><b>4 · Contrast is non-negotiable</b> — 4.5 : 1 for white text, fixed with scrims, not with opacity.</div>
+    <div class="do"><b>5 · Tokens once</b> — colors live in the theme, gradients in one file; no hex in components.</div>
+    <div class="do"><b>6 · Explain exceptions</b> — Visa navy, square reservation fields and lavender tag are deliberate; document any new one.</div>
+  </div>
+
+  <h2>Assets</h2>
+  <table>
+    <tr><th>Asset</th><th>Path</th></tr>
+    <tr><td class="k">Logos</td><td><code>public/images/logo-popnest.png</code> · <code>logo-popnest-white.png</code></td></tr>
+    <tr><td class="k">Hero &amp; testimonials</td><td><code>public/images/hero-coworking.png</code> · <code>testimonial-*.png</code></td></tr>
+    <tr><td class="k">Favicons</td><td><code>public/favicon-16 / 32 / 48 / 512.png</code> · <code>apple-touch-icon.png</code></td></tr>
+    <tr><td class="k">Live site</td><td>https://popnestme.vercel.app</td></tr>
+  </table>
+  <div class="foot"><span>Popnest Design System</span><span>07 / 07 · Rules</span></div>
+</section>
+</body>
+</html>
